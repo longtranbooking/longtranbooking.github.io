@@ -489,6 +489,41 @@
   @keyframes bubbleIn { from { opacity: 0; transform: translateY(6px) scale(0.95); } to { opacity: 1; transform: none; } }
   @media (max-width: 860px) { .bubble { left: 3%; bottom: calc(clamp(86px, 24vw, 120px) * 1.5 + 6px); font-size: 0.8rem; padding: 6px 11px; } }
   @media (prefers-reduced-motion: reduce) { .sideline { display: none; } .bubble { animation: none; } }
+
+  /* ---------- fixes: mascot clears the name, photo stays bright, mascots breathe ---------- */
+  :root { --cw: clamp(210px, 25vw, 340px); --mw: clamp(110px, 11vw, 170px); }
+  .hero-mascot { width: var(--mw); left: calc(56% - var(--cw) / 2 - var(--mw) + 22px); bottom: 4%; }
+  .hero-ball { left: calc(56% - var(--cw) / 2 - var(--mw) * 0.3 + 10px); }
+  .bubble { left: calc(56% - var(--cw) / 2 - var(--mw) + 4px); bottom: calc(4% + var(--mw) * 1.5 + 8px); }
+  .pcard__in::before { height: 30%;
+    background: radial-gradient(55% 80% at 0% 0%, rgba(9, 18, 15, 0.55), transparent 72%),
+                radial-gradient(35% 55% at 100% 0%, rgba(9, 18, 15, 0.42), transparent 72%); }
+  .pcard__pos { text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75); }
+  .peak__mascot img { width: 100%; }
+  @media (max-width: 860px) {
+    .hero-mascot { width: clamp(86px, 24vw, 120px); left: 4%; bottom: 0; }
+    .hero-ball { left: calc(4% + clamp(86px, 24vw, 120px) * 0.7); }
+    .bubble { left: 3%; bottom: calc(clamp(86px, 24vw, 120px) * 1.5 + 6px); }
+  }
+  @media (max-height: 700px) and (max-width: 860px) {
+    .hero-mascot { width: 74px; }
+    .hero-ball { left: calc(4% + 52px); }
+    .bubble { bottom: calc(74px * 1.5 + 4px); }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-mascot { transform-origin: 50% 100%; animation: mWave 3.4s ease-in-out infinite; }
+    .hero-ball { animation: bRock 3.4s ease-in-out infinite; }
+    .bubble { animation: bubbleIn 520ms 900ms var(--sc-ease-out) both, bFloat 4s 1.6s ease-in-out infinite; }
+    .peak__mascot img { transform-origin: 50% 100%; animation: mBreathe 3.6s ease-in-out infinite; }
+    .rail__lead .mascot { transform-origin: 50% 100%; animation: mSway 4.2s ease-in-out infinite; }
+    .contract .mascot { transform-origin: 50% 100%; animation: mHop 3s ease-in-out infinite; }
+  }
+  @keyframes mWave { 0%, 100% { transform: rotate(0deg) translateY(0); } 25% { transform: rotate(-3deg) translateY(-3px); } 50% { transform: rotate(1.5deg) translateY(-5px); } 75% { transform: rotate(-1.5deg) translateY(-2px); } }
+  @keyframes bRock { 0%, 100% { transform: translateX(-2px) rotate(-14deg); } 50% { transform: translateX(3px) rotate(14deg); } }
+  @keyframes bFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+  @keyframes mBreathe { 0%, 100% { transform: translateY(0) scaleY(1); } 50% { transform: translateY(-3px) scaleY(1.025); } }
+  @keyframes mSway { 0%, 100% { transform: rotate(-2.5deg); } 50% { transform: rotate(2.5deg); } }
+  @keyframes mHop { 0%, 55%, 100% { transform: translateY(0) scale(1, 1); } 65% { transform: translateY(0) scale(1.04, 0.96); } 78% { transform: translateY(-10px) scale(0.98, 1.02); } 90% { transform: translateY(0) scale(1.02, 0.98); } }
 </style>
 </head>
 <body>
@@ -640,7 +675,7 @@
         </div>
       </div>
 
-      <img class="mascot peak__mascot" src="assets/khoanh-tay.webp" alt="" width="556" height="720" loading="lazy" data-sc-cue="0.62 1 0.08 0.08">
+      <div class="peak__mascot" data-sc-cue="0.62 1 0.08 0.08"><img class="mascot" src="assets/khoanh-tay.webp" alt="" width="556" height="720" loading="lazy"></div>
     </div>
   </section>
 
