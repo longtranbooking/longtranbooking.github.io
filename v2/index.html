@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>LONG KAKA · YouTuber FC Online và Delta Force</title>
+<meta name="description" content="LONG KAKA (Trần Viết Long), YouTuber FC Online và Delta Force. 674,1K lượt xem YouTube mỗi 28 ngày. Nhận booking quảng cáo cho nhãn hàng công nghệ và công ty game.">
+<meta name="theme-color" content="#08170f">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="LONG KAKA · YouTuber FC Online và Delta Force">
+<meta property="og:description" content="674,1K lượt xem YouTube mỗi 28 ngày · 87,5% người xem là nam · Nhận booking quảng cáo cho nhãn hàng công nghệ và công ty game.">
+<meta property="og:url" content="https://longtranbooking.github.io/v2/">
+<meta property="og:image" content="https://longtranbooking.github.io/v2/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Thẻ cầu thủ LONG KAKA trên sân bóng đêm, kèm số liệu kênh">
+<meta property="og:locale" content="vi_VN">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;1,700;1,800&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="scrollcraft.css">
+<style>
+  :root {
+    --sc-canvas:     #07111c;
+    --sc-surface:    #0f1e2f;
+    --sc-ink:        #eef3f8;
+    --sc-ink-soft:   #a3b5c8;
+    --sc-accent:     #f6c945;
+    --sc-accent-ink: #1a1204;
+    --sc-font-display: "Be Vietnam Pro", system-ui, sans-serif;
+    --sc-font-text:    "Be Vietnam Pro", system-ui, sans-serif;
+    --sc-font-mono:    "Be Vietnam Pro", system-ui, sans-serif;
+    --sc-shadow-color: 214 60% 3%;
+
+    --surface-2: #15283d;
+    --gold-hi: #fff0b3;
+    --gold-lo: #b8841a;
+    --pitch: #0b2a22;
+    --bar-h: 64px;
+  }
+
+  body { letter-spacing: 0; }
+  .sc-grain { z-index: 70; }
+
+  /* ---------- shared type ---------- */
+  .disp {
+    font-family: var(--sc-font-display);
+    font-weight: 900; font-style: italic; text-transform: uppercase;
+    letter-spacing: -0.02em; line-height: 1.02; margin: 0;
+    text-wrap: balance;
+  }
+  .tag {
+    display: inline-block; margin: 0;
+    font-size: var(--sc-t-xs); font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--sc-accent);
+  }
+  .muted { color: var(--sc-ink-soft); }
+  .vh { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+  /* ---------- the one CTA ---------- */
+  .cta {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5em;
+    min-height: 48px; padding: 0.85rem 1.5rem; border-radius: 10px;
+    background: var(--sc-accent); color: var(--sc-accent-ink);
+    font-weight: 800; font-size: 1rem; text-decoration: none; white-space: nowrap;
+    box-shadow: 0 1px 0 var(--gold-hi) inset, 0 6px 16px -6px hsl(var(--sc-shadow-color) / 0.7);
+    transition: transform 140ms var(--sc-ease-out), filter 160ms var(--sc-ease-out);
+  }
+  .cta:active { transform: scale(0.97); }
+  @media (hover: hover) and (pointer: fine) { .cta:hover { filter: brightness(1.08); } }
+  .cta--sm { min-height: 40px; padding: 0.55rem 1rem; font-size: 0.9rem; }
+  .cta--lg { min-height: 56px; padding: 1rem 2rem; font-size: 1.1rem; }
+
+  /* ================= BAR + ALBUM (the signature move) ================= */
+  .bar {
+    position: fixed; inset: 0 0 auto 0; z-index: 60; height: var(--bar-h);
+    display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1rem;
+    padding-inline: var(--sc-gutter);
+    background: color-mix(in oklab, var(--sc-canvas) 92%, transparent);
+    border-bottom: 1px solid var(--sc-hairline);
+  }
+  .brand { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; font-weight: 900; font-style: italic; letter-spacing: 0.02em; }
+  .brand svg { width: 26px; height: 31px; flex: none; }
+  .brand b { color: var(--sc-accent); font-weight: 900; }
+  .album { justify-self: center; display: flex; align-items: center; gap: 0.45rem; position: relative; }
+  .album__label { font-size: var(--sc-t-xs); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sc-ink-soft); margin-right: 0.4rem; transition: color 240ms var(--sc-ease-out); }
+  .slot {
+    position: relative; display: grid; place-items: center;
+    width: 30px; height: 40px; border-radius: 5px;
+    color: color-mix(in oklab, var(--sc-ink) 40%, transparent);
+    border: 1px dashed color-mix(in oklab, var(--sc-ink) 30%, transparent);
+    text-decoration: none;
+    transition: background-color 240ms var(--sc-ease-out), color 240ms var(--sc-ease-out), border-color 240ms var(--sc-ease-out), transform 160ms var(--sc-ease-out);
+  }
+  .slot svg { width: 16px; height: 16px; }
+  .slot__name {
+    position: absolute; top: calc(100% + 6px); left: 50%; translate: -50% 0;
+    font-size: 0.72rem; font-weight: 700; white-space: nowrap; color: var(--sc-ink);
+    background: var(--surface-2); padding: 2px 8px; border-radius: 5px;
+    opacity: 0; pointer-events: none; transition: opacity 160ms var(--sc-ease-out);
+  }
+  .slot:focus-visible .slot__name { opacity: 1; }
+  @media (hover: hover) and (pointer: fine) {
+    .slot:hover { transform: translateY(-2px); }
+    .slot:hover .slot__name { opacity: 1; }
+  }
+  .slot.is-got {
+    border: 1px solid var(--gold-hi);
+    background: linear-gradient(160deg, var(--gold-hi), var(--sc-accent) 45%, var(--gold-lo));
+    color: var(--sc-accent-ink);
+    box-shadow: 0 3px 8px -3px hsl(var(--sc-shadow-color) / 0.8);
+  }
+  .slot.is-new { animation: slotLand 420ms var(--sc-ease-out); }
+  @keyframes slotLand { 0% { transform: scale(0.95); } 45% { transform: scale(1.12); } 100% { transform: scale(1); } }
+  .album__done {
+    margin-left: 0.4rem; font-size: var(--sc-t-xs); font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--sc-accent); opacity: 0; transform: translateX(-6px);
+    transition: opacity 300ms var(--sc-ease-out), transform 300ms var(--sc-ease-out);
+  }
+  .album.is-complete .album__done { opacity: 1; transform: none; }
+  .album.is-complete .album__label { color: var(--sc-ink); }
+
+  /* the flying mini card */
+  .ghost {
+    position: fixed; left: 0; top: 0; z-index: 65; pointer-events: none;
+    width: 30px; height: 40px; border-radius: 5px;
+    background: linear-gradient(160deg, var(--gold-hi), var(--sc-accent) 45%, var(--gold-lo));
+    box-shadow: 0 10px 24px -8px hsl(var(--sc-shadow-color) / 0.9);
+    display: grid; place-items: center; color: var(--sc-accent-ink);
+  }
+  .ghost svg { width: 16px; height: 16px; }
+
+  @media (max-width: 700px) {
+    :root { --bar-h: 58px; }
+    .bar { gap: 0.6rem; }
+    .brand span, .album__label, .album__done { display: none; }
+    .album { gap: 0.3rem; }
+    .slot { width: 26px; height: 34px; }
+    .slot svg { width: 14px; height: 14px; }
+  }
+
+  /* ================= 1 · HERO: thẻ cầu thủ ================= */
+  .hero {
+    position: relative; min-height: 100svh; overflow: clip;
+    padding: calc(var(--bar-h) + var(--sc-6)) var(--sc-gutter) var(--sc-7);
+    display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: center; gap: var(--sc-6);
+    background:
+      radial-gradient(70% 60% at 68% 42%, color-mix(in oklab, var(--pitch) 90%, transparent), transparent 70%);
+  }
+  .hero::after { /* floor fade into the next ground */
+    content: ""; position: absolute; inset: auto 0 0 0; height: 220px; pointer-events: none; z-index: 4;
+    background: linear-gradient(to bottom, transparent, var(--sc-canvas));
+  }
+  .hero__copy { position: relative; z-index: 5; }
+  .hero__copy h1 { font-size: clamp(3.4rem, 1.6rem + 6.4vw, 7.4rem); margin-top: var(--sc-3); }
+  .hero__copy h1 em { font-style: italic; color: var(--sc-accent); }
+  .hero__copy p.lede { margin: var(--sc-5) 0 var(--sc-6); max-width: 30ch; font-size: var(--sc-t-lg); line-height: 1.45; color: var(--sc-ink); text-wrap: pretty; }
+
+  .scene { position: relative; z-index: 5; height: min(80svh, 760px); }
+  .plane { position: absolute; inset: 0; pointer-events: none; }
+  .pt { position: absolute; inset: 0; transform: translate3d(calc(var(--mx, 0) * var(--d, 0) * 1px), calc(var(--my, 0) * var(--d, 0) * 1px), 0); transition: transform 600ms var(--sc-ease-out); }
+
+  .pitch-lines { position: absolute; left: 50%; top: 50%; width: 140%; translate: -50% -50%; opacity: 0.22; }
+  .crest-ghost { position: absolute; left: 50%; top: 46%; width: 62%; translate: -50% -50%; opacity: 0.07; }
+  .beam {
+    position: absolute; top: -20%; width: 34%; height: 130%;
+    background: linear-gradient(to bottom, color-mix(in oklab, #fff8dc 22%, transparent), transparent 75%);
+    filter: blur(28px); transform-origin: 50% 0;
+  }
+  .beam--a { left: 8%; rotate: 22deg; }
+  .beam--b { right: 2%; rotate: -18deg; opacity: 0.7; }
+
+  .card-slot { position: absolute; left: 56%; top: 50%; width: clamp(210px, 25vw, 340px); translate: -50% -50%; pointer-events: auto; }
+  .mascot { display: block; height: auto; max-width: none;
+    filter: drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff) drop-shadow(0 14px 18px hsl(var(--sc-shadow-color) / 0.6)); }
+  .hero-mascot { position: absolute; width: clamp(110px, 12vw, 190px); left: calc(56% - clamp(210px, 25vw, 340px) / 2 - clamp(40px, 4vw, 70px)); bottom: 4%; }
+
+  /* ---------- the player card (used twice) ---------- */
+  .pcard {
+    position: relative; aspect-ratio: 0.7; width: 100%;
+    padding: 3px; border-radius: 18px;
+    background: linear-gradient(160deg, var(--gold-hi), var(--sc-accent) 32%, var(--gold-lo) 64%, var(--gold-hi));
+    box-shadow: 0 2px 0 rgba(255,255,255,0.25) inset, 0 30px 60px -20px hsl(var(--sc-shadow-color) / 0.9), 0 10px 20px -10px hsl(var(--sc-shadow-color) / 0.8);
+  }
+  .pcard__in { position: absolute; inset: 3px; border-radius: 15px; overflow: hidden; background: linear-gradient(180deg, #1c3327, #0e1c17 58%, #09120f); }
+  .pcard__photo { position: absolute; inset: 0 0 28% 0; width: 100%; height: 72%; object-fit: cover; object-position: 50% 8%;
+    -webkit-mask-image: linear-gradient(180deg, #000 72%, transparent); mask-image: linear-gradient(180deg, #000 72%, transparent); }
+  .pcard__in::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 34%; z-index: 1; pointer-events: none;
+    background: linear-gradient(180deg, rgba(9, 18, 15, 0.72), transparent); }
+  .pcard__top, .pcard__pos { z-index: 2; }
+  .pcard__top { position: absolute; top: 6%; left: 7%; display: flex; flex-direction: column; align-items: center; gap: 2px; line-height: 1; color: var(--sc-accent); text-shadow: 0 2px 8px rgba(0,0,0,0.7); }
+  .pcard__top strong { font-size: clamp(1.4rem, 2.6vw, 2.2rem); font-weight: 900; font-style: italic; }
+  .pcard__top small { font-size: 0.6rem; font-weight: 800; letter-spacing: 0.1em; color: var(--gold-hi); }
+  .pcard__top svg { width: 26px; height: 31px; margin-top: 8px; }
+  .pcard__name { position: absolute; left: 0; right: 0; bottom: 15%; text-align: center; font-size: clamp(1.15rem, 2vw, 1.7rem); font-weight: 900; font-style: italic; text-transform: uppercase; color: #fff7d6; }
+  .pcard__sub { position: absolute; left: 0; right: 0; bottom: 8%; text-align: center; font-size: 0.8rem; font-weight: 600; color: var(--sc-accent); }
+  .pcard__pos { position: absolute; top: 6%; right: 7%; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em; color: var(--gold-hi); }
+
+  /* ================= 2 · PEAK: lật thẻ ================= */
+  .peak__stage {
+    display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: var(--sc-7);
+    padding: calc(var(--bar-h) + var(--sc-5)) var(--sc-gutter) var(--sc-6);
+    background: radial-gradient(50% 50% at 50% 52%, color-mix(in oklab, var(--pitch) 70%, transparent), transparent 75%);
+  }
+  .peak__ring { position: absolute; left: 50%; top: 52%; width: min(78vh, 90vw); aspect-ratio: 1; translate: -50% -50%; border: 1px solid var(--sc-hairline); border-radius: 50%; pointer-events: none; }
+  .peak__head { grid-column: 1; justify-self: end; max-width: 24rem; position: relative; }
+  .peak__head h2 { font-size: var(--sc-t-2xl); margin-top: var(--sc-3); }
+  .peak__head p { margin: var(--sc-4) 0 0; color: var(--sc-ink-soft); font-size: var(--sc-t-sm); }
+  .peak__intro { position: absolute; left: 50%; bottom: 7svh; translate: -50% 0; margin: 0; font-size: var(--sc-t-xl); font-weight: 800; font-style: italic; color: var(--sc-ink); white-space: nowrap; }
+
+  .flip { grid-column: 2; width: min(clamp(270px, 28vw, 380px), calc((100svh - var(--bar-h) - 7rem) * 0.7)); perspective: 1600px; }
+  .flip__inner {
+    position: relative; aspect-ratio: 0.7; transform-style: preserve-3d;
+    transform: rotateY(var(--flip, 0deg)) scale(var(--pop, 1));
+  }
+  /* filter on the rotating element would flatten the 3D; dim the front face only */
+  .face--front .pcard { filter: brightness(var(--lit, 1)); }
+  .face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+  .face .pcard { height: 100%; }
+  .face--back { transform: rotateY(180deg); }
+  .back { position: absolute; inset: 3px; border-radius: 15px; overflow: hidden; padding: 7% 8%;
+    background: linear-gradient(180deg, #12261f, #0b1915 60%, #08110e); display: flex; flex-direction: column; justify-content: space-evenly; gap: 4%; }
+  .back__head { display: flex; align-items: center; gap: 10px; padding-bottom: 4%; border-bottom: 1px solid color-mix(in oklab, var(--sc-accent) 35%, transparent); }
+  .back__head svg { width: 22px; height: 26px; flex: none; }
+  .back__head b { font-size: 0.85rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; }
+  .back__head span { margin-left: auto; font-size: 0.72rem; font-weight: 700; color: var(--sc-accent); }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem 8%; margin: 4% 0 0; }
+  .stat b { display: block; font-size: clamp(1.4rem, 2.3vw, 2rem); font-weight: 900; font-style: italic; line-height: 1; color: var(--sc-accent); font-variant-numeric: tabular-nums; }
+  .stat .stat__l { display: block; margin-top: 4px; font-size: 0.72rem; line-height: 1.3; color: var(--sc-ink-soft); }
+  .aud { margin-top: 10%; display: grid; gap: 9px; }
+  .aud__row { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; font-size: 0.75rem; }
+  .aud__row b { font-weight: 800; color: var(--sc-ink); font-variant-numeric: tabular-nums; }
+  .aud__track { grid-column: 1 / -1; height: 5px; border-radius: 3px; background: color-mix(in oklab, var(--sc-ink) 12%, transparent); overflow: hidden; }
+  .aud__fill { display: block; height: 100%; width: 100%; background: var(--sc-accent); transform-origin: 0 50%; transform: scaleX(calc(var(--pct) * var(--b, 0))); }
+  .sheen { position: absolute; inset: 0; border-radius: 18px; overflow: hidden; pointer-events: none; z-index: 3; }
+  .sheen::before { content: ""; position: absolute; top: -10%; bottom: -10%; width: 40%; left: 0;
+    background: linear-gradient(100deg, transparent, rgba(255,247,214,0.38) 50%, transparent);
+    transform: translateX(calc(-180% + var(--sheen, 0) * 460%)) skewX(-12deg); opacity: calc(var(--sheen, 0) * (1 - var(--sheen, 0)) * 4); }
+  .peak__mascot { grid-column: 3; justify-self: start; width: clamp(120px, 12vw, 180px); }
+
+  /* ================= 3 · SERIES ================= */
+  .series { padding: var(--sc-7) var(--sc-gutter) var(--sc-section); display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: var(--sc-7); align-items: center; max-width: var(--sc-maxw); margin-inline: auto; }
+  .series__head h2 { font-size: var(--sc-t-2xl); margin-top: var(--sc-3); }
+  .series__head p { margin: var(--sc-4) 0 0; color: var(--sc-ink-soft); }
+  .dossier { margin: 0; }
+  .dossier__in { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--sc-6); padding: var(--sc-6); border-radius: 18px;
+    background: linear-gradient(180deg, var(--surface-2), var(--sc-surface)); box-shadow: var(--sc-edge), var(--sc-e2); border: 1px solid color-mix(in oklab, var(--sc-accent) 28%, transparent); }
+  .big7 { font-size: clamp(7rem, 14vw, 13rem); font-weight: 900; font-style: italic; line-height: 0.8; color: var(--sc-accent); letter-spacing: -0.05em; padding: 0.06em 0.08em 0.1em 0; }
+  .facts { margin: 0; display: grid; gap: var(--sc-5); align-content: center; }
+  .facts div { display: grid; gap: var(--sc-1); }
+  .facts dt { font-size: var(--sc-t-xs); font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sc-ink-soft); }
+  .facts dd { margin: 0; max-width: 52ch; }
+  .facts .win dd { font-weight: 700; color: var(--sc-ink); }
+  .facts .win dt { color: var(--sc-accent); }
+
+  /* ================= 4 · GÓI (pan) ================= */
+  .goi__stage { display: flex; align-items: center; padding-top: var(--bar-h); }
+  .rail { gap: clamp(1rem, 1.6vw, 1.5rem); padding-inline: var(--sc-gutter); align-items: stretch; }
+  .rail > * { flex: none; }
+  .settle { --s: clamp(0, calc((var(--sc-p, 0) - var(--at, 0)) * 5), 1); }
+  @media (prefers-reduced-motion: no-preference) {
+    .settle { opacity: calc(0.55 + 0.45 * var(--s)); transform: translate3d(0, calc((1 - var(--s)) * 26px), 0); }
+  }
+  .rail__lead { width: min(27rem, 82vw); display: flex; flex-direction: column; justify-content: center; }
+  .rail__lead h2 { font-size: var(--sc-t-2xl); }
+  .rail__lead p { margin: var(--sc-4) 0 0; color: var(--sc-ink-soft); max-width: 34ch; }
+  .rail__lead .mascot { width: 120px; margin-top: var(--sc-5); }
+  .pk { width: clamp(15rem, 22vw, 19rem); }
+  .pk__tilt { height: 100%; display: flex; flex-direction: column; gap: var(--sc-4); padding: var(--sc-5);
+    border-radius: 16px; background: linear-gradient(180deg, var(--surface-2), var(--sc-surface)); box-shadow: var(--sc-edge), var(--sc-e2);
+    min-height: min(26rem, 58svh); }
+  .pk__icon { width: 44px; height: 44px; border-radius: 10px; display: grid; place-items: center; background: color-mix(in oklab, var(--sc-accent) 14%, transparent); color: var(--sc-accent); }
+  .pk__icon svg { width: 22px; height: 22px; }
+  .pk h3 { margin: var(--sc-2) 0 0; font-size: var(--sc-t-xl); font-weight: 900; font-style: italic; line-height: 1.08; letter-spacing: -0.01em; }
+  .pk p { margin: 0; color: var(--sc-ink-soft); }
+  .pk__foot { margin-top: auto; padding-top: var(--sc-4); border-top: 1px solid var(--sc-hairline); font-size: var(--sc-t-sm); }
+  .pk__foot b { color: var(--sc-accent); font-weight: 700; }
+  .rail__note { width: min(20rem, 76vw); display: flex; flex-direction: column; justify-content: center; gap: var(--sc-5); padding-right: var(--sc-6); }
+  .rail__note p { margin: 0; font-size: var(--sc-t-lg); font-weight: 700; line-height: 1.35; }
+
+  /* ================= 5 · KỸ NĂNG ================= */
+  .skills { padding: var(--sc-6) var(--sc-gutter) var(--sc-section); max-width: var(--sc-maxw); margin-inline: auto; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: var(--sc-7); }
+  .skills h2 { font-size: var(--sc-t-2xl); }
+  .plate { margin: 0; display: grid; gap: var(--sc-5); padding: var(--sc-6); border-radius: 18px; background: var(--sc-surface); box-shadow: var(--sc-edge), var(--sc-e1); }
+  .plate > div { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: var(--sc-4); align-items: baseline; }
+  .plate dt { font-size: var(--sc-t-xs); font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sc-ink-soft); }
+  .plate dd { margin: 0; }
+  .chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .chips li { padding: 0.35rem 0.8rem; border-radius: 6px; background: var(--surface-2); font-weight: 600; font-size: var(--sc-t-sm); }
+  .plate .exp { color: var(--sc-ink-soft); }
+  .plate .exp p { margin: 0 0 0.3rem; }
+
+  /* ================= 6 · HỢP ĐỒNG (close) ================= */
+  .close__stage {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: calc(var(--bar-h) + var(--sc-4)) var(--sc-gutter) 0;
+    background: radial-gradient(60% 55% at 50% 30%, color-mix(in oklab, var(--sc-accent) 13%, transparent), transparent 72%);
+  }
+  .contract { position: relative; width: min(40rem, 100%); text-align: center; }
+  .contract .mascot { width: clamp(110px, 12vw, 170px); margin: 0 auto -18px; position: relative; z-index: 2; }
+  .contract__plate { position: relative; padding: var(--sc-7) var(--sc-6) var(--sc-6); border-radius: 20px;
+    background: linear-gradient(180deg, var(--surface-2), var(--sc-surface)); border: 1px solid color-mix(in oklab, var(--sc-accent) 40%, transparent);
+    box-shadow: var(--sc-edge), var(--sc-e3); }
+  .contract h2 { font-size: var(--sc-t-2xl); margin-top: var(--sc-3); }
+  .contract__lead { margin: var(--sc-4) auto var(--sc-6); max-width: 40ch; color: var(--sc-ink-soft); }
+  .contract__mail { display: block; margin-top: var(--sc-4); font-weight: 700; color: var(--sc-accent); word-break: break-all; }
+  .socials { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem 1.25rem; margin-top: var(--sc-5); font-size: var(--sc-t-sm); }
+  .socials a { color: var(--sc-ink); }
+  .foot { margin-top: auto; width: 100%; padding: var(--sc-5) 0 var(--sc-5); text-align: center; font-size: var(--sc-t-xs); color: var(--sc-ink-soft); }
+  .foot p { margin: 0; }
+
+  /* ================= phones: art-directed, not shrunk ================= */
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; grid-template-rows: auto auto; align-content: start; gap: var(--sc-3);
+      padding-top: calc(var(--bar-h) + var(--sc-3)); padding-bottom: var(--sc-6); }
+    .scene { order: -1; height: min(50svh, 440px); }
+    .card-slot { left: 56%; width: min(46vw, 230px, calc(50svh * 0.62)); }
+    .hero-mascot { width: clamp(86px, 24vw, 120px); left: 4%; bottom: 0; }
+    .hero__copy h1 { font-size: clamp(2.9rem, 13vw, 4rem); margin-top: var(--sc-2); }
+    .hero__copy p.lede { margin: var(--sc-3) 0 var(--sc-5); font-size: var(--sc-t-base); }
+
+    .peak__stage { display: flex; flex-direction: column; justify-content: center; gap: var(--sc-4); padding-top: calc(var(--bar-h) + var(--sc-3)); }
+    .peak__head { justify-self: auto; max-width: none; text-align: center; min-height: 5.6rem; }
+    .peak__head h2 { font-size: var(--sc-t-xl); }
+    .peak__head p { margin-top: var(--sc-2); font-size: 0.8rem; }
+    .flip { width: min(84vw, calc((100svh - var(--bar-h) - 9rem) * 0.7)); }
+    .peak__mascot { display: none; }
+    .peak__intro { bottom: auto; top: calc(var(--bar-h) + 2.2rem); font-size: var(--sc-t-lg); }
+
+    .series, .skills { grid-template-columns: 1fr; gap: var(--sc-5); }
+    .dossier__in { grid-template-columns: 1fr; gap: var(--sc-3); padding: var(--sc-5); }
+    .big7 { font-size: 6rem; }
+    .plate { padding: var(--sc-5); }
+    .plate > div { grid-template-columns: 1fr; gap: var(--sc-2); }
+    .pk { width: 74vw; }
+  }
+  @media (max-height: 700px) and (max-width: 860px) {
+    .contract .mascot { width: 84px; }
+    .contract__plate { padding: var(--sc-6) var(--sc-4) var(--sc-5); }
+    .contract__lead { margin-bottom: var(--sc-4); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pt { transition: none; transform: none; }
+    .slot, .album__done, .cta { transition-duration: 1ms; }
+    .slot.is-new { animation: none; }
+    .peak__intro { display: none; }
+    /* the rail is laid out as a readable grid instead of a scroll strip */
+  }
+
+  /* =====================================================================
+     FOOTBALL WORLD: night pitch, chalk, floodlights, kit, transfer paper
+     ===================================================================== */
+  :root {
+    --sc-canvas:     #08170f;
+    --sc-surface:    #10261a;
+    --sc-ink:        #f1f5ef;
+    --sc-ink-soft:   #a8bdad;
+    --sc-font-display: "Barlow Condensed", "Be Vietnam Pro", system-ui, sans-serif;
+    --sc-shadow-color: 150 60% 3%;
+    --surface-2: #173322;
+    --pitch: #145233;
+    --grass-a: #134429;
+    --grass-b: #0f3922;
+    --chalk: rgba(244, 248, 240, 0.62);
+    --paper: #f2eee1;
+    --paper-ink: #14281c;
+    --paper-soft: #4a5a4f;
+  }
+  .disp { font-weight: 800; letter-spacing: 0.005em; line-height: 0.98; }
+  .brand { font-family: var(--sc-font-display); font-size: 1.35rem; font-weight: 800; letter-spacing: 0.02em; }
+  .bar { border-bottom: 0; }
+  .pcard__name, .stat b, .pcard__top strong, .big7 { font-family: var(--sc-font-display); font-weight: 800; }
+  .stat b { font-size: clamp(1.7rem, 2.8vw, 2.5rem); letter-spacing: 0.01em; }
+  .pcard__name { letter-spacing: 0.04em; }
+
+  /* the ball rolls along the touchline under the bar, driven by page scroll */
+  .sideline { position: fixed; left: 0; right: 0; top: var(--bar-h); height: 2px; z-index: 59; pointer-events: none;
+    background: color-mix(in oklab, #ffffff 24%, transparent); }
+  .ball { position: absolute; left: 0; top: -9px; width: 20px; height: 20px; overflow: visible;
+    transform: translate3d(var(--bx, 0px), 0, 0) rotate(var(--br, 0deg));
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.55)); }
+
+  /* ---------- hero: a pitch in perspective under floodlights ---------- */
+  .hero {
+    background:
+      radial-gradient(38% 30% at 12% 0%, rgba(255, 251, 230, 0.10), transparent 70%),
+      radial-gradient(38% 30% at 88% 0%, rgba(255, 251, 230, 0.10), transparent 70%),
+      linear-gradient(180deg, #040b07 0%, #071710 46%, #0a1f14 100%);
+  }
+  .turf { position: absolute; left: -30%; right: -30%; bottom: -4%; height: 86%; z-index: 0; pointer-events: none; }
+  .turf__plane { position: absolute; inset: 0; transform-origin: 50% 100%; transform: perspective(1000px) rotateX(50deg);
+    background: repeating-linear-gradient(90deg, var(--grass-a) 0 5%, var(--grass-b) 5% 10%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 34%); mask-image: linear-gradient(to bottom, transparent 0%, #000 34%); }
+  .turf__plane svg { position: absolute; inset: 4% 6%; width: 88%; height: 92%; }
+  .hero__scrim { position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: linear-gradient(90deg, color-mix(in oklab, var(--sc-canvas) 82%, transparent) 0%, color-mix(in oklab, var(--sc-canvas) 40%, transparent) 34%, transparent 52%); }
+  .flood { position: absolute; top: -6%; width: 92px; height: 30px; border-radius: 4px;
+    background: radial-gradient(circle, #fffbe6 0 2.2px, transparent 3px) 0 0 / 11px 10px, #1a2a21;
+    box-shadow: 0 0 0 2px #22352a; }
+  .flood--a { left: 6%; rotate: 8deg; }
+  .flood--b { right: 4%; rotate: -8deg; }
+  .flood::after { content: ""; position: absolute; left: 50%; top: 100%; width: 3px; height: 160px; translate: -50% 0; background: #1a2a21; }
+  .beam { background: linear-gradient(to bottom, rgba(255, 251, 230, 0.16), transparent 75%); }
+  .contact { position: absolute; left: 6%; right: 6%; bottom: -16px; height: 34px; border-radius: 50%; pointer-events: none;
+    background: radial-gradient(closest-side, rgba(0, 0, 0, 0.6), transparent); }
+  .hero-ball { position: absolute; width: 46px; height: 46px;
+    left: calc(56% - clamp(210px, 25vw, 340px) / 2 - clamp(40px, 4vw, 70px) + clamp(110px, 12vw, 190px) * 0.72);
+    bottom: 3%; filter: drop-shadow(0 8px 6px rgba(0, 0, 0, 0.5)); }
+  .hero__copy h1 { font-size: clamp(4.4rem, 2rem + 8vw, 9.6rem); }
+
+  /* ---------- peak: the centre circle under one floodlight ---------- */
+  .peak__stage {
+    background:
+      linear-gradient(to top, var(--sc-canvas) 0%, transparent 12%),
+      radial-gradient(34% 62% at 50% -6%, rgba(255, 251, 230, 0.09), transparent 72%),
+      linear-gradient(to top, color-mix(in oklab, var(--grass-a) 80%, transparent) 0%, transparent 30%),
+      radial-gradient(50% 50% at 50% 52%, color-mix(in oklab, var(--pitch) 45%, transparent), transparent 75%);
+  }
+  .peak__ring { border: 2px solid rgba(244, 248, 240, 0.14); }
+  .peak__ring::after { content: ""; position: absolute; left: 50%; top: -100vh; bottom: -100vh; width: 2px; translate: -50% 0; background: rgba(244, 248, 240, 0.08); }
+
+  /* ---------- series: a tactics board ---------- */
+  .dossier__in { position: relative; overflow: hidden; background: linear-gradient(180deg, #16301f, #10251a); border-color: rgba(244, 248, 240, 0.18); }
+  .tactics { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0.16; pointer-events: none; }
+  .dossier__in > :not(.tactics) { position: relative; }
+  .big7 { color: var(--sc-accent); font-size: clamp(8rem, 16vw, 15rem); letter-spacing: 0; line-height: 0.8; text-align: center; }
+  .big7 small { display: block; font-family: var(--sc-font-text); font-size: 0.75rem; font-style: normal; font-weight: 800; letter-spacing: 0.14em; color: var(--sc-ink-soft); margin-top: 0.4rem; line-height: 1; }
+
+  /* ---------- packages: each one wears a shirt ---------- */
+  .pk__icon { width: 58px; height: 54px; border-radius: 0; padding-top: 12px; align-items: start;
+    background: var(--sc-accent); color: var(--sc-accent-ink);
+    clip-path: polygon(30% 0, 40% 7%, 60% 7%, 70% 0, 100% 17%, 90% 42%, 80% 36%, 80% 100%, 20% 100%, 20% 36%, 10% 42%, 0 17%); }
+  .pk__icon svg { width: 20px; height: 20px; }
+  .pk__tilt { border-top: 3px solid var(--sc-accent); }
+
+  /* ---------- close: the transfer contract on the pitch ---------- */
+  .close__stage {
+    background:
+      radial-gradient(30% 45% at 10% 0%, rgba(255, 251, 230, 0.10), transparent 70%),
+      radial-gradient(30% 45% at 90% 0%, rgba(255, 251, 230, 0.10), transparent 70%),
+      linear-gradient(to top, color-mix(in oklab, var(--grass-a) 85%, transparent) 0%, transparent 38%);
+  }
+  .paper { --sc-ink: var(--paper-ink); --sc-ink-soft: var(--paper-soft); color: var(--paper-ink);
+    background: var(--paper); border: 1px solid #d8cfb4;
+    box-shadow: inset 0 1px 0 #fffdf5, 0 24px 48px -18px rgba(0, 0, 0, 0.75), 0 6px 12px -6px rgba(0, 0, 0, 0.5); }
+  .paper .tag { color: #6e4d08; }
+  .paper .contract__lead { color: var(--paper-soft); }
+  .paper .contract__mail { color: var(--paper-ink); }
+  .paper .socials a { color: var(--paper-ink); }
+  .paper .cta { background: var(--paper-ink); color: var(--sc-accent); box-shadow: 0 6px 14px -6px rgba(0, 0, 0, 0.55); }
+  .paper :focus-visible { outline-color: var(--paper-ink); }
+  .stamp { position: absolute; top: 18px; right: 20px; width: 54px; height: 64px; rotate: -12deg; opacity: 0.85; }
+  .sign { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sc-6); margin-top: var(--sc-6); text-align: left; }
+  .sign div { display: grid; gap: 4px; }
+  .sign span { display: block; height: 30px; border-bottom: 1px solid #9aa597; font-family: var(--sc-font-display); font-style: italic; font-weight: 700; font-size: 1.35rem; line-height: 30px; color: var(--paper-ink); }
+  .sign small { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--paper-soft); }
+
+  @media (max-width: 860px) {
+    .turf { height: 52%; bottom: auto; top: calc(var(--bar-h) + min(50svh, 440px) * 0.42); }
+    .hero__scrim { background: linear-gradient(to top, color-mix(in oklab, var(--sc-canvas) 86%, transparent) 0%, color-mix(in oklab, var(--sc-canvas) 50%, transparent) 42%, transparent 60%); }
+    .flood { width: 64px; height: 22px; }
+    .flood::after { height: 90px; }
+    .hero-ball { width: 32px; height: 32px; left: calc(4% + clamp(86px, 24vw, 120px) * 0.7); bottom: -1%; }
+    .hero__copy h1 { font-size: clamp(3.6rem, 17vw, 5rem); }
+    .big7 { font-size: 7rem; text-align: left; }
+    .stamp { width: 40px; height: 48px; top: 12px; right: 12px; }
+  }
+  @media (max-height: 700px) and (max-width: 860px) { .sign { display: none; } }
+  @media (prefers-reduced-motion: reduce) { .sideline { display: none; } }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="crest-gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff0b3"/><stop offset=".45" stop-color="#f6c945"/><stop offset="1" stop-color="#b8841a"/>
+    </linearGradient>
+    <symbol id="crest" viewBox="0 0 100 120">
+      <path d="M50 3 L95 15 V58 C95 89 74 107 50 117 C26 107 5 89 5 58 V15 Z" fill="url(#crest-gold)"/>
+      <path d="M50 11 L87 21 V58 C87 84 70 99 50 108 C30 99 13 84 13 58 V21 Z" fill="#0b1a14"/>
+      <path d="M13 40 H87 V48 H13 Z" fill="#f6c945" opacity=".55"/>
+      <text x="50" y="86" text-anchor="middle" font-family="'Be Vietnam Pro', Arial Black, sans-serif" font-weight="900" font-size="38" font-style="italic" fill="#f6c945">LK</text>
+      <path d="M50 22 l3.2 6.6 7.2 1 -5.2 5 1.3 7.2 -6.5 -3.4 -6.5 3.4 1.3 -7.2 -5.2 -5 7.2 -1 z" fill="#f6c945"/>
+    </symbol>
+    <symbol id="ball" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="11" fill="#f4f6f2" stroke="#0b1a12" stroke-width="1"/>
+      <path d="M12 7.4l4.4 3.2-1.7 5.1H9.3l-1.7-5.1z" fill="#0b1a12"/>
+      <g stroke="#0b1a12" stroke-width="1.2" fill="none" stroke-linecap="round"><path d="M12 7.4V2.2M16.4 10.6l5-1.6M14.7 15.7l3.1 4.2M9.3 15.7l-3.1 4.2M7.6 10.6l-5-1.6"/></g>
+      <g fill="#0b1a12"><path d="M9.8 1.3h4.4L12 2.6z"/><path d="M22.6 8.2l.3 4.2-1.6-2.5z"/><path d="M19.4 20.3l-3.6 2.2 1.4-2.5z"/><path d="M4.6 20.3l3.6 2.2-1.4-2.5z"/><path d="M1.4 8.2l-.3 4.2 1.6-2.5z"/></g>
+    </symbol>
+    <symbol id="i-the" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></g></symbol>
+    <symbol id="i-chiso" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 20V11M12 20V4M19 20v-6"/></g></symbol>
+    <symbol id="i-series" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></g></symbol>
+    <symbol id="i-goi" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/></g></symbol>
+    <symbol id="i-kynang" viewBox="0 0 24 24"><path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6-5.3-3-5.3 3 1.2-6L3.4 9.3l6-.7z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-hopdong" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1-4L16 5l3 3L8 19z"/><path d="M13 20h7"/></g></symbol>
+    <symbol id="i-review" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></g></symbol>
+    <symbol id="i-insert" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12h18"/><rect x="9" y="8" width="6" height="8" rx="1.5"/></g></symbol>
+    <symbol id="i-short" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-live" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="2.5" fill="currentColor"/><path d="M7.5 7.5a6.5 6.5 0 000 9M16.5 7.5a6.5 6.5 0 010 9M4.5 4.5a10.5 10.5 0 000 15M19.5 4.5a10.5 10.5 0 010 15"/></g></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1"/></g></symbol>
+  </defs>
+</svg>
+
+<div class="sideline" aria-hidden="true"><svg class="ball" id="rollBall" viewBox="0 0 24 24"><use href="#ball"/></svg></div>
+<div class="sc-grain" aria-hidden="true"></div>
+
+<header class="bar">
+  <a class="brand" href="#top" aria-label="LONG KAKA, về đầu trang"><svg aria-hidden="true"><use href="#crest"/></svg><span>LONG <b>KAKA</b></span></a>
+  <nav class="album" id="album" aria-label="Album thẻ: các phần của trang">
+    <span class="album__label">Album</span>
+    <a class="slot" href="#top" data-slot="the"><svg aria-hidden="true"><use href="#i-the"/></svg><span class="slot__name">Thẻ</span></a>
+    <a class="slot" href="#chi-so" data-slot="chiso"><svg aria-hidden="true"><use href="#i-chiso"/></svg><span class="slot__name">Chỉ số</span></a>
+    <a class="slot" href="#series" data-slot="series"><svg aria-hidden="true"><use href="#i-series"/></svg><span class="slot__name">Series</span></a>
+    <a class="slot" href="#goi" data-slot="goi"><svg aria-hidden="true"><use href="#i-goi"/></svg><span class="slot__name">Gói</span></a>
+    <a class="slot" href="#ky-nang" data-slot="kynang"><svg aria-hidden="true"><use href="#i-kynang"/></svg><span class="slot__name">Kỹ năng</span></a>
+    <a class="slot" href="#hop-dong" data-slot="hopdong"><svg aria-hidden="true"><use href="#i-hopdong"/></svg><span class="slot__name">Hợp đồng</span></a>
+    <span class="album__done" aria-live="polite"></span>
+  </nav>
+  <a class="cta cta--sm" href="mailto:longtran.booking@gmail.com">Chiêu mộ</a>
+</header>
+
+<main id="top">
+
+  <!-- 1 · THẺ: layered hero (natural flow, independent planes) -->
+  <section class="hero" data-sc-act="flow" data-sc-drift="#08170f" data-album="the" data-album-at="0.6" id="the">
+    <div class="turf" data-sc-parallax="-0.8" aria-hidden="true">
+      <div class="turf__plane">
+        <svg viewBox="0 0 1000 640" preserveAspectRatio="none" fill="none" stroke="var(--chalk)" stroke-width="3">
+          <rect x="2" y="2" width="996" height="636"/><path d="M500 2v636"/><ellipse cx="500" cy="320" rx="96" ry="96"/><circle cx="500" cy="320" r="5" fill="var(--chalk)"/>
+          <rect x="2" y="160" width="160" height="320"/><rect x="838" y="160" width="160" height="320"/>
+          <rect x="2" y="245" width="58" height="150"/><rect x="940" y="245" width="58" height="150"/>
+          <circle cx="110" cy="320" r="4" fill="var(--chalk)"/><circle cx="890" cy="320" r="4" fill="var(--chalk)"/>
+        </svg>
+      </div>
+    </div>
+    <div class="hero__scrim" aria-hidden="true"></div>
+    <div class="hero__copy">
+      <p class="tag">Thẻ cầu thủ · đang nhận booking</p>
+      <h1 class="disp">Long <em>Kaka</em></h1>
+      <p class="lede">YouTuber FC Online và Delta Force, đưa nhãn hàng công nghệ và game đến gần cộng đồng game thủ Việt.</p>
+      <a class="cta" href="mailto:longtran.booking@gmail.com">Chiêu mộ</a>
+    </div>
+
+    <div class="scene" id="scene">
+      <div class="plane" data-sc-parallax="-2.4"><div class="pt" style="--d:-6">
+        <svg class="crest-ghost" aria-hidden="true" viewBox="0 0 100 120"><use href="#crest"/></svg>
+      </div></div>
+      <div class="plane" data-sc-parallax="-1.4"><div class="pt" style="--d:-10">
+        <span class="flood flood--a"></span><span class="flood flood--b"></span>
+        <span class="beam beam--a"></span><span class="beam beam--b"></span>
+      </div></div>
+      <div class="plane" data-sc-parallax="-0.6"><div class="pt" style="--d:8">
+        <div class="card-slot" data-album-src>
+          <span class="contact" aria-hidden="true"></span>
+          <div data-sc-tilt="6">
+            <div class="pcard" role="img" aria-label="Thẻ cầu thủ LONG KAKA: ảnh chân dung Trần Viết Long, 674K lượt xem mỗi 28 ngày">
+              <div class="pcard__in">
+                <img class="pcard__photo" src="assets/anh-chan-dung.webp" alt="" width="1333" height="2000" fetchpriority="high">
+                <div class="pcard__top" aria-hidden="true"><strong>674K</strong><small>VIEW/28 NGÀY</small><svg><use href="#crest"/></svg></div>
+                <span class="pcard__pos" aria-hidden="true">CRE</span>
+                <p class="pcard__name" aria-hidden="true">Long Kaka</p>
+                <p class="pcard__sub" aria-hidden="true">Trần Viết Long</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></div>
+      <div class="plane" data-sc-parallax="1.3"><div class="pt" style="--d:16">
+        <img class="mascot hero-mascot" src="assets/vay-tay.webp" alt="" width="476" height="720">
+        <svg class="hero-ball" viewBox="0 0 24 24" aria-hidden="true"><use href="#ball"/></svg>
+      </div></div>
+    </div>
+  </section>
+
+  <!-- 2 · CHỈ SỐ: the peak. Authored silence 0 to 0.12, then the card turns. -->
+  <section id="chi-so" class="peak" data-sc-act="pin" data-sc-span="3.2" data-sc-drift="#050d09" data-album="chiso" data-album-at="0.5" aria-labelledby="chi-so-title">
+    <div data-sc-stage class="peak__stage" id="peakStage">
+      <span class="peak__ring" aria-hidden="true"></span>
+      <p class="peak__intro" data-sc-cue="0 0.2 0">Lật thẻ.</p>
+
+      <div class="peak__head" data-sc-cue="0.38 1 0.06 0.08">
+        <p class="tag">Chỉ số kênh</p>
+        <h2 class="disp" id="chi-so-title">Tầm với thật</h2>
+        <p>Từ YouTube Studio và TikTok, cập nhật tháng 11/2026. TikTok còn có 500,4K lượt thích; khoảng 1.000 video YouTube sau 2 năm.</p>
+      </div>
+
+      <div class="flip" data-album-src>
+        <div class="flip__inner" id="flip">
+          <div class="face face--front" aria-hidden="true">
+            <div class="pcard"><div class="pcard__in">
+              <img class="pcard__photo" src="assets/anh-chan-dung.webp" alt="" width="1333" height="2000" loading="lazy">
+              <div class="pcard__top"><strong>674K</strong><small>VIEW/28 NGÀY</small><svg><use href="#crest"/></svg></div>
+              <span class="pcard__pos">CRE</span>
+              <p class="pcard__name">Long Kaka</p>
+              <p class="pcard__sub">Trần Viết Long</p>
+            </div></div>
+          </div>
+          <div class="face face--back">
+            <div class="pcard"><div class="back">
+              <div class="back__head"><svg aria-hidden="true"><use href="#crest"/></svg><b>Chỉ số kênh</b><span>11/2026</span></div>
+              <dl class="stats">
+                <div class="stat"><dt class="vh">Lượt xem YouTube trong 28 ngày</dt><dd style="margin:0"><b><span class="vh">674,1K</span><span aria-hidden="true" data-lk-num="674.1" data-dec="1" data-suf="K">674,1K</span></b><span class="stat__l" aria-hidden="true">lượt xem YouTube / 28 ngày</span></dd></div>
+                <div class="stat"><dt class="vh">Khán giả YouTube mỗi tháng</dt><dd style="margin:0"><b><span class="vh">105,4K</span><span aria-hidden="true" data-lk-num="105.4" data-dec="1" data-suf="K">105,4K</span></b><span class="stat__l" aria-hidden="true">khán giả YouTube / tháng</span></dd></div>
+                <div class="stat"><dt class="vh">Người đăng ký YouTube</dt><dd style="margin:0"><b><span class="vh">15,5K</span><span aria-hidden="true" data-lk-num="15.5" data-dec="1" data-suf="K">15,5K</span></b><span class="stat__l" aria-hidden="true">người đăng ký YouTube</span></dd></div>
+                <div class="stat"><dt class="vh">Người theo dõi TikTok</dt><dd style="margin:0"><b><span class="vh">57,7K</span><span aria-hidden="true" data-lk-num="57.7" data-dec="1" data-suf="K">57,7K</span></b><span class="stat__l" aria-hidden="true">người theo dõi TikTok</span></dd></div>
+              </dl>
+              <div class="aud" role="list" aria-label="Người xem YouTube trong 28 ngày qua">
+                <div class="aud__row" role="listitem"><span>Nam giới</span><b>87,5%</b><span class="aud__track" aria-hidden="true"><i class="aud__fill" style="--pct:0.875"></i></span></div>
+                <div class="aud__row" role="listitem"><span>18 đến 34 tuổi</span><b>71,5%</b><span class="aud__track" aria-hidden="true"><i class="aud__fill" style="--pct:0.715"></i></span></div>
+                <div class="aud__row" role="listitem"><span>25 đến 34 tuổi (đông nhất)</span><b>50,7%</b><span class="aud__track" aria-hidden="true"><i class="aud__fill" style="--pct:0.507"></i></span></div>
+              </div>
+            </div></div>
+          </div>
+          <span class="sheen" aria-hidden="true"></span>
+        </div>
+      </div>
+
+      <img class="mascot peak__mascot" src="assets/khoanh-tay.webp" alt="" width="556" height="720" loading="lazy" data-sc-cue="0.62 1 0.08 0.08">
+    </div>
+  </section>
+
+  <!-- 3 · SERIES: a wipe opens the dossier -->
+  <section id="series" class="series" data-sc-act="flow" data-sc-drift="#0a1a12" data-album="series" data-album-at="0.55" aria-labelledby="series-title">
+    <div class="series__head sc-stack" data-sc-in data-sc-stagger="60">
+      <p class="tag">Series YouTube</p>
+      <h2 class="disp" id="series-title">7 ngày cày chay</h2>
+      <p>Series nổi bật nhất trên kênh YouTube LONG KAKA.</p>
+    </div>
+    <figure class="dossier" data-sc-reveal="left" data-sc-reveal-at="0.12 0.42" data-album-src>
+      <div class="dossier__in">
+        <svg class="tactics" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#f4f8f0" stroke-width="3" stroke-linecap="round" aria-hidden="true">
+          <path d="M400 0v400"/><circle cx="400" cy="200" r="70"/>
+          <path d="M120 90l20 20M140 90l-20 20M180 280l20 20M200 280l-20 20M560 120l20 20M580 120l-20 20"/>
+          <circle cx="300" cy="150" r="13"/><circle cx="520" cy="270" r="13"/><circle cx="660" cy="190" r="13"/>
+          <path d="M150 115C220 170 250 150 290 152" stroke-dasharray="10 10"/><path d="M310 160C420 230 460 260 505 268" stroke-dasharray="10 10"/>
+          <path d="M535 262C600 230 620 210 646 196" stroke-dasharray="10 10"/><path d="M640 188l10 4-4 10"/>
+        </svg>
+        <div class="big7" aria-hidden="true">7<small>NGÀY</small></div>
+        <dl class="facts">
+          <div><dt>Vấn đề</dt><dd>Cho người chơi FC Online thấy hành trình cày cuốc không nạp tiền mà vẫn xây được một đội hình tạm ổn để chơi.</dd></div>
+          <div><dt>Đã làm</dt><dd>Lên ý tưởng, soạn kịch bản, cày cuốc và chơi game, làm thumbnail, lồng tiếng, kể chuyện.</dd></div>
+          <div class="win"><dt>Kết quả</dt><dd>Tập Real Madrid khoảng 80 nghìn lượt xem; các tập Chelsea và Man United khoảng 33 đến 34 nghìn lượt xem.</dd></div>
+        </dl>
+      </div>
+    </figure>
+  </section>
+
+  <!-- 4 · GÓI: the shelf slides sideways -->
+  <section id="goi" data-sc-act="pan" data-sc-span="2.4" data-sc-drift="#091711" data-album="goi" data-album-at="0.3" aria-labelledby="goi-title">
+    <div data-sc-stage class="goi__stage">
+      <div class="rail" data-sc-pan="0.04">
+        <div class="rail__lead" data-album-src>
+          <p class="tag">Hợp tác</p>
+          <h2 class="disp" id="goi-title" style="margin-top:var(--sc-3)">Gói quảng cáo</h2>
+          <p>Năm cách để sản phẩm của bạn xuất hiện trước cộng đồng game thủ. Báo giá theo từng chiến dịch.</p>
+          <img class="mascot" src="assets/gioi-thieu.webp" alt="" width="423" height="720" loading="lazy">
+        </div>
+        <article class="pk settle" style="--at:0.02"><div class="pk__tilt" data-sc-tilt="5">
+          <span class="pk__icon"><svg aria-hidden="true"><use href="#i-review"/></svg></span>
+          <h3>Video review</h3><p>Video riêng review sản phẩm hoặc tựa game.</p>
+          <p class="pk__foot">Báo giá: <b>liên hệ</b></p></div></article>
+        <article class="pk settle" style="--at:0.16"><div class="pk__tilt" data-sc-tilt="5">
+          <span class="pk__icon"><svg aria-hidden="true"><use href="#i-insert"/></svg></span>
+          <h3>Quảng cáo trong video</h3><p>Gắn đoạn quảng cáo 30 đến 60 giây vào video.</p>
+          <p class="pk__foot">Báo giá: <b>liên hệ</b></p></div></article>
+        <article class="pk settle" style="--at:0.3"><div class="pk__tilt" data-sc-tilt="5">
+          <span class="pk__icon"><svg aria-hidden="true"><use href="#i-short"/></svg></span>
+          <h3>Video ngắn</h3><p>Video ngắn TikTok hoặc YouTube Shorts.</p>
+          <p class="pk__foot">Báo giá: <b>liên hệ</b></p></div></article>
+        <article class="pk settle" style="--at:0.44"><div class="pk__tilt" data-sc-tilt="5">
+          <span class="pk__icon"><svg aria-hidden="true"><use href="#i-live"/></svg></span>
+          <h3>Livestream</h3><p>Livestream chơi game được tài trợ.</p>
+          <p class="pk__foot">Báo giá: <b>liên hệ</b></p></div></article>
+        <article class="pk settle" style="--at:0.58"><div class="pk__tilt" data-sc-tilt="5">
+          <span class="pk__icon"><svg aria-hidden="true"><use href="#i-link"/></svg></span>
+          <h3>Link mô tả</h3><p>Gắn link hoặc mã giảm giá ở phần mô tả video.</p>
+          <p class="pk__foot">Báo giá: <b>liên hệ</b></p></div></article>
+        <div class="rail__note settle" style="--at:0.7">
+          <p>Cần gói riêng cho sản phẩm của bạn?</p>
+          <a class="cta" href="mailto:longtran.booking@gmail.com">Chiêu mộ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · KỸ NĂNG: a compact label plate -->
+  <section id="ky-nang" class="skills" data-sc-act="flow" data-sc-drift="#0b1b13" data-album="kynang" data-album-at="0.5" aria-labelledby="ky-nang-title">
+    <div class="sc-stack" data-sc-in data-sc-stagger="60">
+      <p class="tag">Chỉ số đặc biệt</p>
+      <h2 class="disp" id="ky-nang-title" style="margin-top:var(--sc-3)">Tự tay làm trọn</h2>
+    </div>
+    <dl class="plate" data-sc-in data-sc-stagger="70" data-album-src>
+      <div><dt>Kỹ năng</dt><dd><ul class="chips"><li>Lên ý tưởng</li><li>Kịch bản</li><li>Dựng content</li><li>Edit video</li><li>Thumbnail</li><li>Thiết kế</li><li>Lồng tiếng</li><li>Kể chuyện</li><li>Mẫu ảnh</li></ul></dd></div>
+      <div><dt>Game</dt><dd><ul class="chips"><li>FC Online</li><li>Delta Force</li></ul></dd></div>
+      <div><dt>Công cụ</dt><dd><ul class="chips"><li>CapCut</li><li>Photoshop</li></ul></dd></div>
+      <div><dt>Kinh nghiệm</dt><dd class="exp"><p>Từng nhận thiết kế và edit video cho các kênh YouTube và TikTok khác.</p><p>Từng làm mẫu ảnh quần áo trong năm 2025.</p></dd></div>
+    </dl>
+  </section>
+
+  <!-- 6 · HỢP ĐỒNG: the inquiry plate, last element, holds -->
+  <section id="hop-dong" data-sc-act="pin" data-sc-span="1.3" data-sc-drift="#07130d" data-album="hopdong" data-album-at="0.2" aria-labelledby="hop-dong-title">
+    <div data-sc-stage class="close__stage">
+      <div class="contract" data-sc-cue="0 1 0 0" data-album-src>
+        <img class="mascot" src="assets/dang-tay.webp" alt="Nhân vật hoạt hình LONG KAKA dang rộng hai tay chào đón" width="588" height="720" loading="lazy">
+        <div class="contract__plate paper">
+          <svg class="stamp" viewBox="0 0 100 120" aria-hidden="true"><use href="#crest"/></svg>
+          <p class="tag">Hợp đồng chuyển nhượng</p>
+          <h2 class="disp" id="hop-dong-title">Chiêu mộ Long Kaka</h2>
+          <p class="contract__lead">Gửi email booking để trao đổi gói quảng cáo hợp với sản phẩm hoặc tựa game của bạn.</p>
+          <a class="cta cta--lg" href="mailto:longtran.booking@gmail.com">Chiêu mộ</a>
+          <a class="contract__mail" href="mailto:longtran.booking@gmail.com">longtran.booking@gmail.com</a>
+          <div class="socials">
+            <a href="https://www.youtube.com/@LONGKAKAK" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.tiktok.com/@longkakadepchai" target="_blank" rel="noopener">TikTok</a>
+            <a href="https://www.facebook.com/longkakadeptrai" target="_blank" rel="noopener">Facebook</a>
+          </div>
+          <div class="sign" aria-hidden="true">
+            <div><span></span><small>Nhãn hàng</small></div>
+            <div><span>Long Kaka</span><small>Cầu thủ</small></div>
+          </div>
+        </div>
+      </div>
+      <footer class="foot">
+        <p>© LONG KAKA · Trần Viết Long. Trang cá nhân của nhà sáng tạo nội dung, không phải trang chính thức của FC Online hay Delta Force.</p>
+      </footer>
+    </div>
+  </section>
+
+</main>
+
+<script src="scrollcraft.js"></script>
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  ScrollCraft.mount(document.body);
+
+  function P(el) { return parseFloat(el.style.getPropertyValue('--sc-p')) || 0; }
+  function seg(p, a, b) { return Math.min(1, Math.max(0, (p - a) / (b - a))); }
+  function ease(t) { return 1 - Math.pow(1 - t, 3); }
+  function fmt(v, d) { return v.toFixed(d).replace('.', ','); }
+
+  /* ---------- hero: pointer moves the world, plane by plane ---------- */
+  var scene = document.getElementById('scene');
+  if (fine && !reduce && scene) {
+    var hero = scene.closest('.hero');
+    hero.addEventListener('pointermove', function (e) {
+      var r = hero.getBoundingClientRect();
+      scene.style.setProperty('--mx', ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
+      scene.style.setProperty('--my', ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
+    });
+    hero.addEventListener('pointerleave', function () { scene.style.setProperty('--mx', 0); scene.style.setProperty('--my', 0); });
+  }
+
+  /* ---------- peak: the card turns, the real numbers land ---------- */
+  var peak = document.getElementById('chi-so');
+  var stage = document.getElementById('peakStage');
+  var flip = document.getElementById('flip');
+  var nums = [].slice.call(peak.querySelectorAll('[data-lk-num]')).map(function (el) {
+    return { el: el, v: parseFloat(el.getAttribute('data-lk-num')), d: +el.getAttribute('data-dec'), s: el.getAttribute('data-suf') || '' };
+  });
+  var fills = [].slice.call(peak.querySelectorAll('.aud__fill'));
+  var lastSig = '';
+  function drawPeak() {
+    var p = P(peak);
+    var turn = reduce ? 1 : ease(seg(p, 0.12, 0.40));
+    var count = reduce ? 1 : ease(seg(p, 0.42, 0.64));
+    var bars = reduce ? 1 : ease(seg(p, 0.58, 0.80));
+    var sheen = reduce ? 0 : seg(p, 0.42, 0.58);
+    var pop = reduce ? 1 : 1 + 0.05 * Math.sin(Math.PI * seg(p, 0.34, 0.5));
+    var lit = reduce ? 1 : 0.5 + 0.5 * seg(p, 0.06, 0.2);
+    var sig = [turn, count, bars, sheen, lit].map(function (n) { return n.toFixed(3); }).join('|');
+    if (sig === lastSig) return;
+    lastSig = sig;
+    flip.style.setProperty('--flip', (turn * 180).toFixed(2) + 'deg');
+    flip.style.setProperty('--pop', pop.toFixed(4));
+    flip.querySelector('.face--front').style.setProperty('--lit', lit.toFixed(3));
+    flip.style.setProperty('--sheen', sheen.toFixed(3));
+    for (var i = 0; i < nums.length; i++) nums[i].el.textContent = fmt(nums[i].v * count, nums[i].d) + nums[i].s;
+    for (var j = 0; j < fills.length; j++) fills[j].style.setProperty('--b', bars.toFixed(3));
+    stage.setAttribute('data-sc-verify-state', sig);
+  }
+
+  /* ---------- the album: every card you pass is collected ---------- */
+  var album = document.getElementById('album');
+  var done = album.querySelector('.album__done');
+  var sections = [].slice.call(document.querySelectorAll('[data-album]')).map(function (s) {
+    return { el: s, key: s.getAttribute('data-album'), at: parseFloat(s.getAttribute('data-album-at')) || 0.5,
+             src: s.querySelector('[data-album-src]') || s, slot: album.querySelector('[data-slot="' + s.getAttribute('data-album') + '"]'), got: false };
+  });
+  var gotCount = 0;
+  function land(sec) {
+    sec.slot.classList.add('is-got', 'is-new');
+    sec.slot.setAttribute('aria-label', sec.slot.textContent.trim() + ', đã sưu tập');
+    setTimeout(function () { sec.slot.classList.remove('is-new'); }, 450);
+    if (gotCount === sections.length) { album.classList.add('is-complete'); done.textContent = 'Đủ bộ'; }
+    album.setAttribute('data-sc-verify-state', String(gotCount));
+  }
+  function collect(sec) {
+    sec.got = true; gotCount++;
+    if (reduce || !sec.slot.animate) { land(sec); return; }
+    var from = sec.src.getBoundingClientRect(), to = sec.slot.getBoundingClientRect();
+    var g = document.createElement('div');
+    g.className = 'ghost'; g.setAttribute('aria-hidden', 'true');
+    g.innerHTML = sec.slot.querySelector('svg').outerHTML;
+    document.body.appendChild(g);
+    var fx = Math.min(Math.max(from.left + from.width / 2, 40), innerWidth - 40) - 15;
+    var fy = Math.min(Math.max(from.top + from.height / 2, 80), innerHeight - 40) - 20;
+    var tx = to.left + to.width / 2 - 15, ty = to.top + to.height / 2 - 20;
+    var a = g.animate([
+      { transform: 'translate(' + fx + 'px,' + fy + 'px) scale(2.4) rotate(-8deg)', opacity: 0 },
+      { transform: 'translate(' + fx + 'px,' + (fy - 30) + 'px) scale(2.2) rotate(-4deg)', opacity: 1, offset: 0.25 },
+      { transform: 'translate(' + tx + 'px,' + ty + 'px) scale(' + (to.width / 30).toFixed(3) + ') rotate(0deg)', opacity: 1 }
+    ], { duration: 720, easing: 'cubic-bezier(0.23, 1, 0.32, 1)' });
+    a.onfinish = function () { g.remove(); land(sec); };
+  }
+  function checkAlbum() {
+    var atEnd = scrollY + innerHeight >= document.documentElement.scrollHeight - 4;
+    for (var i = 0; i < sections.length; i++) {
+      var s = sections[i];
+      if (s.got) continue;
+      if (P(s.el) >= s.at || (atEnd && s.key === 'hopdong')) collect(s);
+    }
+  }
+
+  /* ---------- the ball rolls along the touchline as you scroll ---------- */
+  var ball = document.getElementById('rollBall'), lastY = -1;
+  function rollBall() {
+    if (reduce || !ball || scrollY === lastY) return;
+    lastY = scrollY;
+    var max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+    var x = (scrollY / max) * (innerWidth - 24);
+    ball.style.setProperty('--bx', x.toFixed(1) + 'px');
+    ball.style.setProperty('--br', (x / (Math.PI * 20) * 360).toFixed(1) + 'deg');
+  }
+
+  function frame() { drawPeak(); checkAlbum(); rollBall(); requestAnimationFrame(frame); }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
