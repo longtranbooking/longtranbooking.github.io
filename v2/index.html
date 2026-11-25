@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>LONG KAKA · YouTuber FC Online và Delta Force</title>
-<meta name="description" content="LONG KAKA (Trần Viết Long), YouTuber FC Online và Delta Force. 674,1K lượt xem YouTube mỗi 28 ngày. Nhận booking quảng cáo cho nhãn hàng công nghệ và công ty game.">
+<meta name="description" content="LONG KAKA (Trần Viết Long), YouTuber FC Online và Delta Force, creator của Garena và Razer. 674,1K lượt xem YouTube mỗi 28 ngày. Nhận booking quảng cáo cho nhãn hàng công nghệ và công ty game.">
 <meta name="theme-color" content="#08170f">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:title" content="LONG KAKA · YouTuber FC Online và Delta Force">
-<meta property="og:description" content="674,1K lượt xem YouTube mỗi 28 ngày · 87,5% người xem là nam · Nhận booking quảng cáo cho nhãn hàng công nghệ và công ty game.">
+<meta property="og:description" content="Creator của Garena và Razer · 674,1K lượt xem YouTube mỗi 28 ngày · 87,5% người xem là nam · Nhận booking quảng cáo cho nhãn hàng công nghệ và công ty game.">
 <meta property="og:url" content="https://longtranbooking.github.io/v2/">
 <meta property="og:image" content="https://longtranbooking.github.io/v2/assets/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -468,8 +468,27 @@
     .big7 { font-size: 7rem; text-align: left; }
     .stamp { width: 40px; height: 48px; top: 12px; right: 12px; }
   }
-  @media (max-height: 700px) and (max-width: 860px) { .sign { display: none; } }
-  @media (prefers-reduced-motion: reduce) { .sideline { display: none; } }
+  @media (max-height: 700px) and (max-width: 860px) {
+    .sign { display: none; }
+    .scene { height: 40svh; }
+    .card-slot { width: min(40vw, calc(40svh * 0.6)); }
+    .hero-mascot { width: 74px; }
+    .hero-ball { width: 26px; height: 26px; left: calc(4% + 52px); }
+    .bubble { bottom: calc(74px * 1.5 + 4px); font-size: 0.72rem; }
+    .hero__copy h1 { font-size: 3.2rem; }
+    .hero__copy p.lede { margin: var(--sc-2) 0 var(--sc-4); font-size: 0.95rem; line-height: 1.4; }
+  }
+  .hero__copy .lede b { color: var(--sc-accent); font-weight: 800; }
+  .bubble { position: absolute; z-index: 2; white-space: nowrap;
+    left: calc(56% - clamp(210px, 25vw, 340px) / 2 - clamp(40px, 4vw, 70px) - clamp(30px, 3vw, 60px));
+    bottom: calc(4% + clamp(110px, 12vw, 190px) * 1.5 + 6px);
+    padding: 8px 14px; border-radius: 14px 14px 14px 3px; background: #ffffff; color: #0b1a12;
+    font-weight: 800; font-size: 0.92rem; box-shadow: 0 8px 18px -8px rgba(0, 0, 0, 0.7);
+    transform-origin: 20% 100%; animation: bubbleIn 520ms 900ms var(--sc-ease-out) both; }
+  .bubble::after { content: ""; position: absolute; left: 22px; bottom: -8px; border: 8px solid transparent; border-top-color: #ffffff; border-bottom: 0; border-left-width: 2px; }
+  @keyframes bubbleIn { from { opacity: 0; transform: translateY(6px) scale(0.95); } to { opacity: 1; transform: none; } }
+  @media (max-width: 860px) { .bubble { left: 3%; bottom: calc(clamp(86px, 24vw, 120px) * 1.5 + 6px); font-size: 0.8rem; padding: 6px 11px; } }
+  @media (prefers-reduced-motion: reduce) { .sideline { display: none; } .bubble { animation: none; } }
 </style>
 </head>
 <body>
@@ -540,9 +559,9 @@
     </div>
     <div class="hero__scrim" aria-hidden="true"></div>
     <div class="hero__copy">
-      <p class="tag">Thẻ cầu thủ · đang nhận booking</p>
+      <p class="tag">Trần Viết Long · khoảng 1.000 video · nhận booking</p>
       <h1 class="disp">Long <em>Kaka</em></h1>
-      <p class="lede">YouTuber FC Online và Delta Force, đưa nhãn hàng công nghệ và game đến gần cộng đồng game thủ Việt.</p>
+      <p class="lede">YouTuber FC Online và Delta Force, đang là creator của <b>Garena</b> và <b>Razer</b>. Phần lớn người xem là nam 18 đến 34 tuổi.</p>
       <a class="cta" href="mailto:longtran.booking@gmail.com">Chiêu mộ</a>
     </div>
 
@@ -571,6 +590,7 @@
         </div>
       </div></div>
       <div class="plane" data-sc-parallax="1.3"><div class="pt" style="--d:16">
+        <span class="bubble" aria-hidden="true">Chào nhãn hàng!</span>
         <img class="mascot hero-mascot" src="assets/vay-tay.webp" alt="" width="476" height="720">
         <svg class="hero-ball" viewBox="0 0 24 24" aria-hidden="true"><use href="#ball"/></svg>
       </div></div>
