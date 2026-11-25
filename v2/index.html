@@ -556,10 +556,14 @@
   .boards__logo { display: block; flex: none; background-color: var(--sc-ink);
     -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center;
     -webkit-mask-size: contain; mask-size: contain; }
-  .boards__logo--garena { height: clamp(50px, 6vw, 66px); aspect-ratio: 352 / 388; background-color: #ffd24a; }
+  .boards__logo--garena { height: clamp(50px, 6vw, 66px); aspect-ratio: 352 / 388; background-color: #e31f28; }
   .boards__logo--eafc { height: clamp(34px, 4vw, 44px); aspect-ratio: 360 / 312; }
   .boards__logo--delta { height: clamp(38px, 4.6vw, 52px); aspect-ratio: 1230 / 653; }
   .boards li { gap: 0.6rem; }
+
+  /* Razer keeps its own colours: the official mark as an image, the name in the mark's green */
+  .boards__img { display: block; flex: none; width: auto; max-width: none; height: clamp(46px, 5.4vw, 60px); }
+  .boards__brand--razer { color: #04fc04; }
 </style>
 </head>
 <body>
@@ -675,7 +679,7 @@
         <li><span class="boards__label">Đối tác creator</span></li>
         <li><span class="boards__logo boards__logo--garena" role="img" aria-label="Garena" style="-webkit-mask-image:url(assets/logo-garena.png);mask-image:url(assets/logo-garena.png)"></span></li>
         <li aria-hidden="true"><span class="boards__sep">★</span></li>
-        <li><span class="boards__brand">Razer</span></li>
+        <li><img class="boards__img" src="assets/logo-razer.png" alt="" width="416" height="420"><span class="boards__brand boards__brand--razer">Razer</span></li>
         <li aria-hidden="true"><span class="boards__sep">★</span></li>
         <li><span class="boards__label">Nội dung về</span></li>
         <li><span class="boards__logo boards__logo--eafc" aria-hidden="true" style="-webkit-mask-image:url(assets/logo-eafc.png);mask-image:url(assets/logo-eafc.png)"></span><span class="boards__game">FC Online</span></li>
@@ -687,7 +691,7 @@
         <li><span class="boards__label">Đối tác creator</span></li>
         <li><span class="boards__logo boards__logo--garena" role="img" aria-label="Garena" style="-webkit-mask-image:url(assets/logo-garena.png);mask-image:url(assets/logo-garena.png)"></span></li>
         <li><span class="boards__sep">★</span></li>
-        <li><span class="boards__brand">Razer</span></li>
+        <li><img class="boards__img" src="assets/logo-razer.png" alt="" width="416" height="420"><span class="boards__brand boards__brand--razer">Razer</span></li>
         <li><span class="boards__sep">★</span></li>
         <li><span class="boards__label">Nội dung về</span></li>
         <li><span class="boards__logo boards__logo--eafc" aria-hidden="true" style="-webkit-mask-image:url(assets/logo-eafc.png);mask-image:url(assets/logo-eafc.png)"></span><span class="boards__game">FC Online</span></li>
