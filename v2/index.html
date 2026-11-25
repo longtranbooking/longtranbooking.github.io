@@ -524,6 +524,33 @@
   @keyframes mBreathe { 0%, 100% { transform: translateY(0) scaleY(1); } 50% { transform: translateY(-3px) scaleY(1.025); } }
   @keyframes mSway { 0%, 100% { transform: rotate(-2.5deg); } 50% { transform: rotate(2.5deg); } }
   @keyframes mHop { 0%, 55%, 100% { transform: translateY(0) scale(1, 1); } 65% { transform: translateY(0) scale(1.04, 0.96); } 78% { transform: translateY(-10px) scale(0.98, 1.02); } 90% { transform: translateY(0) scale(1.02, 0.98); } }
+
+  /* ---------- perimeter LED boards: partners and the games, as text ---------- */
+  .boards { position: relative; z-index: 6; overflow: hidden; padding: 6px 0;
+    background:
+      radial-gradient(circle, rgba(255, 210, 74, 0.07) 0 1px, transparent 1.4px) 0 0 / 5px 5px,
+      linear-gradient(180deg, #0a120d, #050a07);
+    border-block: 1px solid rgba(244, 248, 240, 0.12);
+    box-shadow: 0 -10px 24px -12px rgba(0, 0, 0, 0.8); }
+  .boards__track { display: flex; width: max-content; }
+  .boards__set { display: flex; align-items: center; gap: clamp(1.5rem, 3vw, 3rem); padding-right: clamp(1.5rem, 3vw, 3rem); margin: 0; list-style: none; }
+  .boards li { display: flex; align-items: baseline; gap: 0.7rem; white-space: nowrap; height: clamp(54px, 7vw, 76px); align-items: center; }
+  .boards__label { font-size: var(--sc-t-xs); font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sc-ink-soft); }
+  .boards__brand { font-family: var(--sc-font-display); font-weight: 800; font-style: italic; text-transform: uppercase; letter-spacing: 0.06em;
+    font-size: clamp(1.9rem, 3.4vw, 2.9rem); color: #ffd24a; }
+  .boards__game { font-family: var(--sc-font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+    font-size: clamp(1.3rem, 2.2vw, 1.8rem); color: var(--sc-ink); }
+  .boards__sep { color: rgba(255, 210, 74, 0.55); font-size: 1rem; }
+  @media (prefers-reduced-motion: no-preference) {
+    .boards__track { animation: boardsRun 38s linear infinite; }
+    .boards:hover .boards__track, .boards:focus-within .boards__track { animation-play-state: paused; }
+  }
+  @keyframes boardsRun { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
+  @media (prefers-reduced-motion: reduce) {
+    .boards__track { width: auto; justify-content: center; }
+    .boards__set { flex-wrap: wrap; justify-content: center; padding: 0 var(--sc-gutter); }
+    .boards__set[aria-hidden="true"] { display: none; }
+  }
 </style>
 </head>
 <body>
@@ -631,6 +658,36 @@
       </div></div>
     </div>
   </section>
+
+  <!-- Perimeter boards: real partners (text until official logos are approved), then the games covered -->
+  <aside class="boards" aria-label="Đối tác và nội dung">
+    <div class="boards__track">
+      <ul class="boards__set">
+        <li><span class="boards__label">Đối tác creator</span></li>
+        <li><span class="boards__brand">Garena</span></li>
+        <li aria-hidden="true"><span class="boards__sep">★</span></li>
+        <li><span class="boards__brand">Razer</span></li>
+        <li aria-hidden="true"><span class="boards__sep">★</span></li>
+        <li><span class="boards__label">Nội dung về</span></li>
+        <li><span class="boards__game">FC Online</span></li>
+        <li aria-hidden="true"><span class="boards__sep">·</span></li>
+        <li><span class="boards__game">Delta Force</span></li>
+        <li aria-hidden="true"><span class="boards__sep">★</span></li>
+      </ul>
+      <ul class="boards__set" aria-hidden="true">
+        <li><span class="boards__label">Đối tác creator</span></li>
+        <li><span class="boards__brand">Garena</span></li>
+        <li><span class="boards__sep">★</span></li>
+        <li><span class="boards__brand">Razer</span></li>
+        <li><span class="boards__sep">★</span></li>
+        <li><span class="boards__label">Nội dung về</span></li>
+        <li><span class="boards__game">FC Online</span></li>
+        <li><span class="boards__sep">·</span></li>
+        <li><span class="boards__game">Delta Force</span></li>
+        <li><span class="boards__sep">★</span></li>
+      </ul>
+    </div>
+  </aside>
 
   <!-- 2 · CHỈ SỐ: the peak. Authored silence 0 to 0.12, then the card turns. -->
   <section id="chi-so" class="peak" data-sc-act="pin" data-sc-span="3.2" data-sc-drift="#050d09" data-album="chiso" data-album-at="0.5" aria-labelledby="chi-so-title">
@@ -781,7 +838,7 @@
         </div>
       </div>
       <footer class="foot">
-        <p>© LONG KAKA · Trần Viết Long. Trang cá nhân của nhà sáng tạo nội dung, không phải trang chính thức của FC Online hay Delta Force.</p>
+        <p>© LONG KAKA · Trần Viết Long. Trang cá nhân của nhà sáng tạo nội dung, không phải trang chính thức của Garena, Razer, FC Online hay Delta Force.</p>
       </footer>
     </div>
   </section>
@@ -828,7 +885,7 @@
     var bars = reduce ? 1 : ease(seg(p, 0.58, 0.80));
     var sheen = reduce ? 0 : seg(p, 0.42, 0.58);
     var pop = reduce ? 1 : 1 + 0.05 * Math.sin(Math.PI * seg(p, 0.34, 0.5));
-    var lit = reduce ? 1 : 0.5 + 0.5 * seg(p, 0.06, 0.2);
+    var lit = reduce ? 1 : 0.82 + 0.18 * seg(p, 0.06, 0.2);
     var sig = [turn, count, bars, sheen, lit].map(function (n) { return n.toFixed(3); }).join('|');
     if (sig === lastSig) return;
     lastSig = sig;
